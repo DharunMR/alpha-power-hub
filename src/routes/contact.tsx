@@ -19,5 +19,31 @@ export const Route = createFileRoute("/contact")({
 });
 
 function ContactPage() {
-  return <PageShell><main><section className="page-intro"><p className="eyebrow">Start a conversation</p><h1>Your next project deserves a precise first step.</h1><p>Tell our team what you are planning. We will connect you with the right engineering specialist.</p></section><section className="mx-auto grid max-w-7xl gap-10 px-6 pb-24 md:grid-cols-[0.8fr_1.2fr]"><div className="space-y-8 border-t border-border pt-8 text-base text-muted-foreground">{[[Phone,"+971 2 679 7215 / 056 547 8556"],[Mail,"mail@alphapowergroups.com"],[MapPin,"Office 7, Mezzanine Floor, Shabia ME12, Abu Dhabi, UAE"],[Clock,"Monday–Saturday · 9:00–15:00 · 16:30–22:00"]].map(([Icon,text]) => { const DetailIcon=Icon as typeof Phone; return <div className="flex items-start gap-4" key={String(text)}><DetailIcon className="mt-0.5 size-5 text-primary" /><span className="max-w-sm leading-7">{String(text)}</span></div>; })}</div><form action="mailto:mail@alphapowergroups.com" method="post" encType="text/plain" className="grid gap-4 rounded-2xl border border-border bg-card/60 p-6 backdrop-blur-xl md:grid-cols-2 md:p-8"><Input name="name" required placeholder="Name" aria-label="Name" /><Input name="email" type="email" required placeholder="Email" aria-label="Email" /><Input name="phone" placeholder="Phone" aria-label="Phone" /><Input name="company" placeholder="Company" aria-label="Company" /><Textarea name="message" required placeholder="Tell us about your project" aria-label="Project details" className="min-h-40 md:col-span-2" /><Button type="submit" size="lg" className="rounded-xl md:col-span-2">Send enquiry</Button></form></section></main></PageShell>;
+  const details = [
+    [Phone, "+971 2 679 7215 / 056 547 8556"],
+    [Mail, "mail@alphapowergroups.com"],
+    [MapPin, "Office 7, Mezzanine Floor, Shabia ME12, Abu Dhabi, UAE"],
+    [Clock, "Monday–Saturday · 9:00–15:00 · 16:30–22:00"],
+  ] as const;
+
+  return (
+    <PageShell>
+      <main>
+        <section className="page-intro"><p className="eyebrow">Start a conversation</p><h1>Your next project deserves a precise first step.</h1><p>Tell our team what you are planning. We will connect you with the right engineering specialist.</p></section>
+        <section className="mx-auto grid max-w-7xl gap-8 px-4 pb-20 sm:px-6 md:grid-cols-[0.8fr_1.2fr] md:gap-10 md:pb-24">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-6 border-t border-border pt-7 text-muted-foreground md:grid-cols-1 md:gap-y-8 md:pt-8">
+            {details.map(([Icon, text]) => <div className="flex min-w-0 items-start gap-2.5 sm:gap-4" key={text}><Icon className="mt-1 size-4 shrink-0 text-primary sm:size-5" /><span className="min-w-0 break-words text-sm leading-6 sm:text-base sm:leading-7">{text}</span></div>)}
+          </div>
+          <form action="mailto:mail@alphapowergroups.com" method="post" encType="text/plain" className="grid grid-cols-2 gap-3 rounded-2xl border border-border bg-card/60 p-4 backdrop-blur-xl sm:gap-4 sm:p-6 md:p-8">
+            <Input name="name" required placeholder="Name" aria-label="Name" className="min-w-0" />
+            <Input name="email" type="email" required placeholder="Email" aria-label="Email" className="min-w-0" />
+            <Input name="phone" placeholder="Phone" aria-label="Phone" className="min-w-0" />
+            <Input name="company" placeholder="Company" aria-label="Company" className="min-w-0" />
+            <Textarea name="message" required placeholder="Tell us about your project" aria-label="Project details" className="col-span-2 min-h-36" />
+            <Button type="submit" size="lg" className="col-span-2 rounded-xl">Send enquiry</Button>
+          </form>
+        </section>
+      </main>
+    </PageShell>
+  );
 }
