@@ -8,3 +8,4 @@
 - [x] Keep the clicked service number highlighted while smooth scrolling
 - [x] Serve the Company Profile PDF from the site domain for browser compatibility
 - [x] Add the provided company overview, mission, vision, and expertise to the About page
+- [x] Keep compact details and contact fields in two columns on mobile

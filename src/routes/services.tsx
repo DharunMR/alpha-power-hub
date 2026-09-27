@@ -92,21 +92,21 @@ function ServicesPage() {
           <p>Our teams handle supply, installation, testing and commissioning across the complete electrical infrastructure lifecycle.</p>
         </section>
 
-        <section aria-label="What we deliver" className="mx-auto grid max-w-7xl gap-3 px-6 pb-14 sm:grid-cols-3">
+        <section aria-label="What we deliver" className="mx-auto grid max-w-7xl grid-cols-2 gap-3 px-4 pb-14 sm:px-6 lg:grid-cols-3">
           {[
             { title: "Supply to commissioning", copy: "One accountable team across the full delivery lifecycle." },
             { title: "HV, LV & controls", copy: "Substations, cable networks, panels and automation under one roof." },
             { title: "Abu Dhabi based", copy: "Local teams supporting sites across the UAE." },
           ].map((item) => (
-            <div key={item.title} className="rounded-3xl border border-border/70 bg-secondary/40 p-6">
-              <p className="font-display text-base font-semibold text-foreground">{item.title}</p>
-              <p className="mt-2 text-base leading-7 text-muted-foreground">{item.copy}</p>
+            <div key={item.title} className="min-w-0 rounded-3xl border border-border/70 bg-secondary/40 p-4 sm:p-6">
+              <p className="font-display text-sm font-semibold text-foreground sm:text-base">{item.title}</p>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">{item.copy}</p>
             </div>
           ))}
         </section>
 
         <nav aria-label="Service index" className="sticky top-20 z-30 mx-auto max-w-7xl px-4 pb-14 sm:px-6">
-          <div className="grid gap-1 rounded-3xl border border-border/70 bg-background/80 p-2 shadow-xl backdrop-blur-2xl sm:grid-cols-3 lg:grid-cols-9">
+          <div className="grid grid-cols-3 gap-1 rounded-3xl border border-border/70 bg-background/80 p-2 shadow-xl backdrop-blur-2xl lg:grid-cols-9">
             {services.map((service) => (
               <a
                 key={service.number}
@@ -127,10 +127,10 @@ function ServicesPage() {
                     setActive(service.number);
                   }, 1400);
                 }}
-                className={`grid min-w-0 grid-cols-[auto_minmax(0,1fr)] items-center gap-3 rounded-2xl px-3 py-3 text-sm transition-colors sm:grid-cols-1 lg:items-start ${active === service.number ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-secondary"}`}
+                className={`grid min-w-0 grid-cols-[auto_minmax(0,1fr)] items-center gap-2 rounded-2xl px-2 py-3 text-sm transition-colors sm:gap-3 sm:px-3 lg:grid-cols-1 lg:items-start ${active === service.number ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-secondary"}`}
               >
                 <span className={`shrink-0 font-medium ${active === service.number ? "text-primary-foreground" : "text-primary"}`}>{service.number}</span>
-                <span className="truncate lg:whitespace-normal">{service.title}</span>
+                <span className="hidden truncate sm:block lg:whitespace-normal">{service.title}</span>
               </a>
             ))}
           </div>
@@ -161,9 +161,9 @@ function ServicesPage() {
                       <span className="font-display text-6xl font-semibold text-accent/70 sm:text-7xl">{service.number}</span>
                       <h2 className="mt-6 font-display text-3xl font-semibold leading-tight sm:text-4xl">{service.title}</h2>
                       <p className="mt-5 text-lg leading-7 text-muted-foreground">{service.copy}</p>
-                      <ul className="mt-8 flex flex-wrap gap-2">
+                      <ul className="mt-8 grid grid-cols-2 gap-2">
                         {service.details.map((detail) => (
-                          <li key={detail} className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-4 py-1.5 text-base text-foreground">
+                          <li key={detail} className="flex min-w-0 items-start gap-2 rounded-xl border border-border bg-secondary/50 px-3 py-2 text-sm leading-5 text-foreground sm:rounded-full sm:px-4 sm:py-1.5 sm:text-base">
                             <Check className="size-3.5 shrink-0 text-primary" />
                             {detail}
                           </li>

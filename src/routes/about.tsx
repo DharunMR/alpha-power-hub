@@ -32,40 +32,40 @@ function AboutPage() {
             <p className="mt-8 max-w-4xl border-l-4 border-primary pl-6 font-display text-2xl leading-snug text-foreground md:text-3xl">
               With <span className="text-primary">over a decade of expertise</span>, we are a trusted partner delivering high-quality, reliable, and innovative solutions to major clients across the UAE and beyond.
             </p>
-            <div className="mt-12 grid gap-6 md:grid-cols-2">
-              <div className="rounded-2xl bg-secondary/50 p-6 md:p-8">
+            <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-6">
+              <div className="min-w-0 rounded-2xl bg-secondary/50 p-4 sm:p-6 md:p-8">
                 <ShieldCheck className="size-7 text-primary" />
-                <h3 className="mt-4 font-display text-xl font-semibold text-foreground">Excellence, safety &amp; sustainability</h3>
-                <p className="mt-3 text-lg leading-8 text-foreground/80">Our commitment drives us to provide cutting-edge power solutions, including <strong className="text-foreground">substation works, cable installations, control systems, relay protection, automation, and renewable energy projects</strong>.</p>
+                <h3 className="mt-4 font-display text-base font-semibold text-foreground sm:text-xl">Excellence, safety &amp; sustainability</h3>
+                <p className="mt-3 text-sm leading-6 text-foreground/80 sm:text-lg sm:leading-8">Our commitment drives us to provide cutting-edge power solutions, including <strong className="text-foreground">substation works, cable installations, control systems, relay protection, automation, and renewable energy projects</strong>.</p>
               </div>
-              <div className="rounded-2xl bg-secondary/50 p-6 md:p-8">
+              <div className="min-w-0 rounded-2xl bg-secondary/50 p-4 sm:p-6 md:p-8">
                 <Building2 className="size-7 text-primary" />
-                <h3 className="mt-4 font-display text-xl font-semibold text-foreground">Skilled professionals, highest standards</h3>
-                <p className="mt-3 text-lg leading-8 text-foreground/80">Every project meets the highest industry standards with <strong className="text-foreground">strict regulatory compliance and best practices</strong> — efficient, cost-effective, future-ready solutions for a sustainable tomorrow.</p>
+                <h3 className="mt-4 font-display text-base font-semibold text-foreground sm:text-xl">Skilled professionals, highest standards</h3>
+                <p className="mt-3 text-sm leading-6 text-foreground/80 sm:text-lg sm:leading-8">Every project meets the highest industry standards with <strong className="text-foreground">strict regulatory compliance and best practices</strong> — efficient, cost-effective, future-ready solutions for a sustainable tomorrow.</p>
               </div>
             </div>
           </div>
         </section>
-        <section className="mx-auto grid max-w-7xl gap-px border-y border-border bg-border md:grid-cols-3">
+        <section className="mx-auto grid max-w-7xl grid-cols-2 gap-px border-y border-border bg-border lg:grid-cols-3">
           {[
             [Target, "Our mission", "At Alpha Power Electromechanical Contracting LLC, our mission is to deliver innovative, high-quality, and sustainable electromechanical solutions that exceed client expectations."],
             [Sparkles, "Our vision", "To be a trusted leader in the Electromechanical contracting industry by offering innovative, sustainable, and cost-effective solutions to our clients."],
             [ShieldCheck, "Our standard", "Safety, quality, regulatory compliance, and reliability guide every installation, test, and commissioning milestone."],
           ].map(([Icon, title, copy]) => {
             const FeatureIcon = Icon as typeof Target;
-            return <article key={String(title)} className="bg-background p-8 md:p-10"><FeatureIcon className="size-6 text-primary" /><h2 className="mt-8 font-display text-2xl">{String(title)}</h2><p className="mt-3 text-base leading-7 text-muted-foreground">{String(copy)}</p></article>;
+            return <article key={String(title)} className="min-w-0 bg-background p-4 sm:p-8 md:p-10"><FeatureIcon className="size-6 text-primary" /><h2 className="mt-5 font-display text-lg sm:mt-8 sm:text-2xl">{String(title)}</h2><p className="mt-3 text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">{String(copy)}</p></article>;
           })}
         </section>
         <section className="mx-auto max-w-7xl px-6 py-24">
           <div className="max-w-3xl"><p className="eyebrow">Our expertise</p><h2 className="mt-3 font-display text-4xl md:text-5xl">Qualified teams for demanding environments.</h2><p className="mt-5 max-w-2xl text-muted-foreground">We bring together highly qualified and experienced engineers who excel in the design, implementation, and management of electromechanical projects.</p></div>
-          <div className="mt-12 grid gap-px border border-border bg-border md:grid-cols-3">
+          <div className="mt-12 grid grid-cols-2 gap-px border border-border bg-border lg:grid-cols-3">
             {[
               [Cable, "Power systems", "Installation and maintenance of high-voltage substations, transmission lines, and transformers."],
               [Factory, "Oil & Gas infrastructure", "Turnkey solutions for pipeline systems, process plants, and offshore platforms."],
               [Building2, "Building electromechanical works", "HVAC systems, electrical infrastructure, plumbing, and fire protection for modern buildings."],
             ].map(([Icon, title, copy]) => {
               const ExpertiseIcon = Icon as typeof Cable;
-              return <article key={String(title)} className="bg-background p-8 md:p-10"><ExpertiseIcon className="size-7 text-primary" /><h3 className="mt-8 font-display text-2xl">{String(title)}</h3><p className="mt-4 text-base leading-7 text-muted-foreground">{String(copy)}</p></article>;
+              return <article key={String(title)} className="min-w-0 bg-background p-4 sm:p-8 md:p-10"><ExpertiseIcon className="size-7 text-primary" /><h3 className="mt-5 font-display text-lg sm:mt-8 sm:text-2xl">{String(title)}</h3><p className="mt-4 text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">{String(copy)}</p></article>;
             })}
           </div>
           <Button asChild className="mt-10 rounded-xl"><Link to="/services">Explore our services</Link></Button>
@@ -74,13 +74,13 @@ function AboutPage() {
           <div className="mx-auto max-w-7xl px-6">
             <p className="eyebrow">Key achievements</p>
             <h2 className="mt-3 font-display text-4xl md:text-5xl">Trusted on major UAE projects.</h2>
-            <ul className="mt-8 grid gap-4 text-lg leading-8 text-muted-foreground md:grid-cols-3">
-              <li className="rounded-2xl border border-border bg-card/50 p-6">Approved sub-contractor for Siemens for their DMS projects across Abu Dhabi and Al Ain.</li>
-              <li className="rounded-2xl border border-border bg-card/50 p-6">Successfully completed projects for leading government entities and private corporations.</li>
-              <li className="rounded-2xl border border-border bg-card/50 p-6">Recognized for on-time delivery and adherence to international quality standards.</li>
+            <ul className="mt-8 grid grid-cols-2 gap-3 text-sm leading-6 text-muted-foreground sm:gap-4 sm:text-lg sm:leading-8 lg:grid-cols-3">
+              <li className="rounded-2xl border border-border bg-card/50 p-4 sm:p-6">Approved sub-contractor for Siemens for their DMS projects across Abu Dhabi and Al Ain.</li>
+              <li className="rounded-2xl border border-border bg-card/50 p-4 sm:p-6">Successfully completed projects for leading government entities and private corporations.</li>
+              <li className="rounded-2xl border border-border bg-card/50 p-4 sm:p-6">Recognized for on-time delivery and adherence to international quality standards.</li>
             </ul>
             <h3 className="mt-16 font-display text-2xl">Selected projects</h3>
-            <div className="mt-6 grid gap-4 md:grid-cols-2">
+            <div className="mt-6 grid grid-cols-2 gap-3 sm:gap-4">
               {[
                 ["DMS adaptation & RTU installation, testing and commissioning", "Siemens · Abu Dhabi & Al Ain substations"],
                 ["22kV switchgear, transformers & 48V DC systems", "TCAJV · New Abu Dhabi International Airport (MTB)"],
@@ -89,15 +89,15 @@ function AboutPage() {
                 ["Complete installation of 33/11kV primary substation", "Al Jaber · Shahama & Madinat Zayed"],
                 ["Street lighting poles, lights and cabling works", "Tyco · Sweihan Solar Project"],
               ].map(([work, client]) => (
-                <div key={work} className="rounded-xl border-l-2 border-primary bg-card/50 px-5 py-4"><p className="text-lg text-foreground">{work}</p><p className="mt-1 text-base text-muted-foreground">{client}</p></div>
+                <div key={work} className="min-w-0 rounded-xl border-l-2 border-primary bg-card/50 px-3 py-4 sm:px-5"><p className="text-sm leading-6 text-foreground sm:text-lg">{work}</p><p className="mt-1 text-xs leading-5 text-muted-foreground sm:text-base">{client}</p></div>
               ))}
             </div>
             <p className="mt-6 text-base text-muted-foreground">Other clients include Lindenberg, Danway, Pivot, NPC, CCC, Arabtec, Multiplex and more — over 75 completed projects across the UAE.</p>
           </div>
         </section>
-        <section className="mx-auto grid max-w-7xl gap-10 px-6 py-24 md:grid-cols-2">
-          <div><p className="eyebrow">Quality policy</p><h2 className="mt-3 font-display text-3xl">ISO 9001:2015 certified quality.</h2><p className="mt-4 text-muted-foreground">We integrate sound quality management into every activity, built on customer value, process focus, continual improvement (Plan-Do-Check-Act), leadership, motivation and long-term partnership.</p></div>
-          <div><p className="eyebrow">Health, safety &amp; environment</p><h2 className="mt-3 font-display text-3xl">All accidents are preventable.</h2><p className="mt-4 text-muted-foreground">No task is so important that injury to people or damage to the environment is justified. We comply with all applicable HSE legislation, control hazards, train our people and work only with contractors who share our standards.</p></div>
+        <section className="mx-auto grid max-w-7xl grid-cols-2 gap-5 px-4 py-24 sm:gap-10 sm:px-6">
+          <div className="min-w-0"><p className="eyebrow">Quality policy</p><h2 className="mt-3 font-display text-xl sm:text-3xl">ISO 9001:2015 certified quality.</h2><p className="mt-4 text-sm leading-6 text-muted-foreground sm:text-lg sm:leading-8">We integrate sound quality management into every activity, built on customer value, process focus, continual improvement (Plan-Do-Check-Act), leadership, motivation and long-term partnership.</p></div>
+          <div className="min-w-0"><p className="eyebrow">Health, safety &amp; environment</p><h2 className="mt-3 font-display text-xl sm:text-3xl">All accidents are preventable.</h2><p className="mt-4 text-sm leading-6 text-muted-foreground sm:text-lg sm:leading-8">No task is so important that injury to people or damage to the environment is justified. We comply with all applicable HSE legislation, control hazards, train our people and work only with contractors who share our standards.</p></div>
         </section>
       </main>
     </PageShell>

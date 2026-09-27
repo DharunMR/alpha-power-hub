@@ -75,13 +75,13 @@ function Index() {
               <div><p className="eyebrow">Integrated expertise</p><h2 className="font-display text-4xl md:text-5xl">What we deliver.</h2><p className="mt-4 max-w-2xl text-lg leading-8 text-muted-foreground">A few of our core services. We offer 9 in total.</p></div>
               <Button asChild size="lg" className="h-14 rounded-xl px-7 text-lg shadow-lg"><Link to="/services">View all 9 services <ArrowRight /></Link></Button>
             </div>
-            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
               {capabilities.slice(0, 3).map(({ number, title, body }) => (
-                <Link key={number} to="/services" hash={`service-${number}`} className="group flex flex-col rounded-2xl border border-border bg-card/45 p-7 backdrop-blur-xl transition hover:-translate-y-1 hover:border-primary/60 hover:bg-card/70">
+                <Link key={number} to="/services" hash={`service-${number}`} className="group flex min-w-0 flex-col rounded-2xl border border-border bg-card/45 p-4 backdrop-blur-xl transition hover:-translate-y-1 hover:border-primary/60 hover:bg-card/70 sm:p-7">
                   <div className="flex items-center justify-between"><span className="font-display text-3xl text-primary">{number}</span><span className="grid size-10 place-items-center rounded-full border border-border text-primary transition group-hover:bg-primary group-hover:text-primary-foreground"><ArrowUpRight className="size-5" /></span></div>
-                  <h3 className="mt-6 font-display text-2xl">{title}</h3>
-                  <p className="mt-3 flex-1 text-lg leading-8 text-muted-foreground">{body}</p>
-                  <span className="mt-6 inline-flex w-fit items-center gap-2 rounded-lg bg-primary/10 px-4 py-2 text-base font-medium text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">View details <ArrowRight className="size-4" /></span>
+                  <h3 className="mt-5 font-display text-lg sm:mt-6 sm:text-2xl">{title}</h3>
+                  <p className="mt-3 flex-1 text-sm leading-6 text-muted-foreground sm:text-lg sm:leading-8">{body}</p>
+                  <span className="mt-5 inline-flex w-fit items-center gap-2 rounded-lg bg-primary/10 px-3 py-2 text-sm font-medium text-primary transition group-hover:bg-primary group-hover:text-primary-foreground sm:mt-6 sm:px-4 sm:text-base">View <span className="hidden sm:inline">details</span><ArrowRight className="size-4" /></span>
                 </Link>
               ))}
             </div>
@@ -92,7 +92,7 @@ function Index() {
         <section className="relative min-h-[650px] overflow-hidden">
           <img src={infrastructureImage} width={1600} height={912} loading="lazy" alt="Electrical transmission and substation infrastructure at dusk" className="absolute inset-0 h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/15" />
-          <div className="relative mx-auto flex min-h-[650px] max-w-7xl items-center px-6 py-24"><div className="max-w-2xl"><p className="eyebrow">Built for demanding environments</p><h2 className="font-display text-4xl leading-tight md:text-6xl">One engineering partner. Every critical connection.</h2><p className="mt-6 max-w-xl leading-7 text-muted-foreground">From 33/11kV substations and transmission systems to energy monitoring and solar installations, Alpha Power delivers safe, tested and commissioned solutions.</p><div className="mt-9 grid gap-5 sm:grid-cols-3">{["Power","Oil & Gas","Industrial"].map((sector) => <div key={sector} className="rounded-xl border border-border bg-card/55 px-5 py-4 text-base backdrop-blur-xl"><span className="text-primary">◆</span><p className="mt-2 font-display">{sector}</p></div>)}</div></div></div>
+          <div className="relative mx-auto flex min-h-[650px] max-w-7xl items-center px-6 py-24"><div className="max-w-2xl"><p className="eyebrow">Built for demanding environments</p><h2 className="font-display text-4xl leading-tight md:text-6xl">One engineering partner. Every critical connection.</h2><p className="mt-6 max-w-xl leading-7 text-muted-foreground">From 33/11kV substations and transmission systems to energy monitoring and solar installations, Alpha Power delivers safe, tested and commissioned solutions.</p><div className="mt-9 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5">{["Power","Oil & Gas","Industrial"].map((sector) => <div key={sector} className="rounded-xl border border-border bg-card/55 px-4 py-4 text-base backdrop-blur-xl sm:px-5"><span className="text-primary">◆</span><p className="mt-2 font-display">{sector}</p></div>)}</div></div></div>
         </section>
 
         <section className="bg-primary text-primary-foreground"><div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 py-20 md:flex-row md:items-end"><div><p className="text-sm uppercase tracking-[0.18em] opacity-70">Ready to move forward?</p><h2 className="mt-4 max-w-3xl font-display text-4xl md:text-5xl">Bring clarity, control and resilience to your next project.</h2></div><Button asChild variant="secondary" size="lg" className="rounded-xl"><Link to="/contact">Talk to our team <ArrowRight /></Link></Button></div></section>
